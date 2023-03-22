@@ -77,11 +77,11 @@ These six services and related OAS files are listed below:
 The path parameter naming convention is described below:
 
 * ID ({id}) following a noun in the path always corresponds to the noun.
-  For example,  /customers/{id}
+  For example, for /customers/{id}:
   * customers is the noun.
   * {id} is the customer ID.
 * When the ID ({id}) doesn't correspond to the noun it is explicitly named.
-  For example,  /carts/{customerId}/items
+  For example, for /carts/{customerId}/items:
   * carts is the noun.
   * {customerId} is the customer ID.
 
