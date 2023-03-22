@@ -1,8 +1,5 @@
 # Jon-Catanzano-Comcast Writing Sample
 
-> **Important**
-> **This is Jon Catanzano's writing sample for the Comcast Writing Challenge.** This document does not refer to an in-use API.
-
 > **Warning**
 > **This is Jon Catanzano's writing sample for the Comcast Writing Challenge.** This document does not refer to an in-use API.
 
