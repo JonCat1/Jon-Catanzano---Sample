@@ -3,7 +3,7 @@
 > **Warning**
 > **This is Jon Catanzano's writing sample for the Comcast Writing Challenge.** This document does not refer to an in-use API.
 
-This repository contains a summary of how you can use these sample API services to create a running application.
+This repository contains documentation that summarizes how you can use these sample API services to create a running application.
 
 #### Contents
 
@@ -14,37 +14,35 @@ This repository contains a summary of how you can use these sample API services 
   - [API Services (Resources)](#32-api-services)
 - [API Reference](#4-api-reference)
   - [Catalog](#41-catalog)
-  - [Customer)](#42-customer)
+  - [Customer](#42-customer)
   - [Customer Payment Cards](#43-customer-payment-cards)
   - [Customer Addresses](#44-customer-addresses)
   - [Customer Cart](#45-customer-cart)
   - [Customer Order](#46-customer-order)
-  - [Dispatcher)](#47-dispatcher)
+  - [Dispatcher](#47-dispatcher)
 - [Status Code Convention](#5-status-code-convention)
 - [Testing](#6-testing)
 
 ## 1. Overview
 
-Our story offers an easy to understand, practical, high-level description of how you can use API services, also called resources, to select and tailor endpoints (or methods) and other parameters to create an application. In fact APIs make it simpler to communicate with and connect to an application, such as to rapidly validate new service ideas, iterate the design, and quickly deliver services for release.  
+Our story offers an easy-to-follow, practical, high-level description of how you can use API services, also called resources, to select and tailor endpoints (or methods) and other parameters to set up an application. In fact APIs make it simpler to communicate with and connect to an application, such as to rapidly validate new service ideas, iterate the design, and quickly deliver services for release.  
 
-This story describes how you can use API services to meet your specific use case requirements and to set up interactions needed to create a running application.  
+This story describes how you can use API services to meet your specific use case requirements and set up the interactions needed to create a running application.  
 
 ### Purpose
  
-This story provides proper guidance that any decision maker, solution architect, developer, and others can follow to model the services that are available in this sample API. (For this reason, this story is written to be less technical).
+This story provides guidance that decision makers, solution architects, developers, and technicians can follow to model the services that are available in this sample API. For this reason, this story is written to be less technical.
 
 It only serves as a high-level guide for flows and should be consulted in tandem with the provided [Open API v3.x Specifications](https://swagger.io/specification/). 
 
-Note that API contracts aren't covered in this story.
+(Note that API contracts aren't covered in this story).
 
 ### Target Audience
 
 The target audiences for this story is:
 
-* Developers who need to interact intimately with the API.
-* Decision-makers and solution architects who need to understand how the API functions.
-
-## 2. API Documentation
+* Developers and other technicians who need to interact intimately with the API.
+* Decision-makers and solution architects who need to understand how the API functions and what it can do.
 
 ## 3. API Architecture
 
