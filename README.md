@@ -39,9 +39,9 @@ The target audiences for this story is:
 * Developers who need to interact intimately with the API.
 * Decision-makers and solution architects who need to understand how the API functions.
 
-## API Documentation
+## 2. API Documentation
 
-## API Architecture
+## 3. API Architecture
 
 
 
@@ -51,14 +51,14 @@ The example API contains services (resources) that might be used in an online sh
 
 There is also a Dispatcher service that is represented near the end of this story.
 
-### Authorization
+### 3.1 Authorization
 All user access to this sample API needs is provided through OAuth authorization. For more details, go to the [End User Authentication with OAuth 2.0](https://oauth.net/articles/authentication/) specification. 
 
 The OAuth flow grants the access token, which contains the customerID.
 * For this challenge, consider 043fa14b-f6b5-4b96-9cd3-b5f0819b6283 as the customerID.
 * Any v4 UUID can be used in examples, where an ID needs to be depicted.
 
-### API Services
+### 3.2 API Services
 
 There are seven services in total. Six of these have Open API v3.x Specifications (OAS) as described earlier.
 
@@ -168,5 +168,5 @@ For example, request validation errors
 * 5XX: Server errors
 For example, database connectivity or internal service call errors
 
-## Testing
+## 4. Testing
 TBD.
