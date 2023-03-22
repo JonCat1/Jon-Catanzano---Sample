@@ -1,9 +1,9 @@
 # Jon-Catanzano-Comcast Writing Sample
 
-> **Warning**
-> **The Medium API is no longer supported.** We do not recommend using it.
+> **Important**
+> **This is Jon Catanzano's writing sample for the Comcast Writing Challenge.** This document does not refer to an in-use API.
 
-# Medium’s API documentation
+# Connected Applications Made Simple with APIs
 
 This repository contains the documentation for [Medium](https://medium.com)’s API.
 
@@ -21,15 +21,12 @@ This repository contains the documentation for [Medium](https://medium.com)’s 
 - [Testing](#4-testing)
 
 ## 1. Overview
-# Connected Applications Made Simple with APIs
-
-## Overview 
 
 Our story offers an easy to understand, practical, high-level description of how you can use API services, also called resources, to select and tailor endpoints (or methods) and other parameters to create an application. In fact APIs make it simpler to communicate with and connect to an application, such as to rapidly validate new service ideas, iterate the design, and quickly deliver services for release.  
 
 This story describes how you can use API services to meet your specific use case requirements and to set up interactions needed to create a running application.  
 
-## Purpose
+### Purpose
  
 This story provides proper guidance that any decision maker, solution architect, developer, and others can follow to model the services that are available in this sample API. (For this reason, this story is written to be less technical).
 
@@ -37,19 +34,20 @@ It only serves as a high-level guide for flows and should be consulted in tandem
 
 Note that API contracts aren't covered in this story.
 
-## Target Audience
+### Target Audience
 
 The target audiences for this story is:
 
 * Developers who need to interact intimately with the API.
 * Decision-makers and solution architects who need to understand how the API functions.
 
-# API Documentation
-## Architecture
+## API Documentation
+
+## API Architecture
 
 
 
-## Potential Flows
+### Potential Flows
 
 The example API contains services (resources) that might be used in an online shopping, ordering, payment, and shipment platform. 
 
