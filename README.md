@@ -10,7 +10,7 @@ This repository contains documentation that summarizes how you can use these sam
 - [Overview](#1-overview)
 - [API Architecture](#2-api-architecture)
   - [Authorization](#21-authorization)
-  - [API Services (Resources)](#22-api-services)
+  - [API Services)](#22-api-services)
   - [Path Parameter Naming](#23-path-parameter-naming)
 - [API Reference](#3-api-reference)
   - [Catalog](#31-catalog)
@@ -58,7 +58,7 @@ The OAuth flow grants the access token, which contains the customerID.
 * For this challenge, use a customerID of 043fa14b-f6b5-4b96-9cd3-b5f0819b6283.
 * Any v4 UUID can be used in samples where an ID needs to be depicted.
 
-### 2.2 API Services (Resources)
+### 2.2 API Services
 
 There are seven services (resources) in total. Six of these services have Open API v3.x Specifications (OAS) as described earlier.
 
