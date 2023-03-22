@@ -52,11 +52,11 @@ The sample API contains services (resources) that might be used in an online sho
 There is also a Dispatcher service that is represented near the end of this story.
 
 ### 2.1 Authorization
-All user access to this sample API needs is provided through OAuth authorization. For more details, go to the [End User Authentication with OAuth 2.0](https://oauth.net/articles/authentication/) specification. 
+All user access to this sample API is provided through OAuth authorization. For more details, go to the [End User Authentication with OAuth 2.0](https://oauth.net/articles/authentication/) specification. 
 
 The OAuth flow grants the access token, which contains the customerID.
 
-* In this sample, use a customerID of 043fa14b-f6b5-4b96-9cd3-b5f0819b6283.
+* In this sample, the customerID is: 043fa14b-f6b5-4b96-9cd3-b5f0819b6283.
 * Any v4 UUID can be used in samples where an ID needs to be depicted.
 
 ### 2.2 API Services
