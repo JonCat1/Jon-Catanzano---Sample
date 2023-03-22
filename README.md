@@ -3,18 +3,16 @@
 > **Warning**
 > **This is Jon Catanzano's writing sample for the Comcast Writing Challenge.** This document does not refer to an in-use API.
 
-This repository contains the documentation for [Medium](https://medium.com)’s API.
+This repository contains a summary of how you can use these sample API services to create a running application.
 
 #### Contents
 
 - [Overview](#1-overview)
 - [API Documentation](#2-api-documentation)
-  - [Browser-based authentication](#21-browser-based-authentication)
-  - [Self-issued access tokens](#22-self-issued-access-tokens)
 - [API Architecture](#3-api-architecture)
   - [Authorization](#31-authorization)
-  - [API Services](#32-api-services)
-- [API reference](#4-api-reference)
+  - [API Services (Resources)](#32-api-services)
+- [API Reference](#4-api-reference)
 - [Testing](#5-testing)
 
 ## 1. Overview
@@ -57,9 +55,9 @@ The OAuth flow grants the access token, which contains the customerID.
 * For this challenge, consider 043fa14b-f6b5-4b96-9cd3-b5f0819b6283 as the customerID.
 * Any v4 UUID can be used in examples, where an ID needs to be depicted.
 
-### 3.2 API Services
+### 3.2 API Services (Resources)
 
-There are seven services in total. Six of these have Open API v3.x Specifications (OAS) as described earlier.
+There are seven services (resources) in total. Six of these services have Open API v3.x Specifications (OAS) as described earlier.
 
 These six services and related OAS files are listed below:
 
