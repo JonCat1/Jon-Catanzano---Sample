@@ -8,20 +8,20 @@ This repository contains documentation that summarizes how you can use these sam
 #### Contents
 
 - [Overview](#1-overview)
-- [API Documentation](#2-api-documentation)
-- [API Architecture](#3-api-architecture)
-  - [Authorization](#31-authorization)
-  - [API Services (Resources)](#32-api-services)
-- [API Reference](#4-api-reference)
-  - [Catalog](#41-catalog)
-  - [Customer](#42-customer)
-  - [Customer Payment Cards](#43-customer-payment-cards)
-  - [Customer Addresses](#44-customer-addresses)
-  - [Customer Cart](#45-customer-cart)
-  - [Customer Order](#46-customer-order)
-  - [Dispatcher](#47-dispatcher)
-- [Status Code Convention](#5-status-code-convention)
-- [Testing](#6-testing)
+- [API Architecture](#2-api-architecture)
+  - [Authorization](#21-authorization)
+  - [API Services (Resources)](#22-api-services)
+  - [Path Parameter Naming](#23-path-parameter-naming)
+- [API Reference](#3-api-reference)
+  - [Catalog](#31-catalog)
+  - [Customer](#32-customer)
+  - [Customer Payment Cards](#33-customer-payment-cards)
+  - [Customer Addresses](#34-customer-addresses)
+  - [Customer Cart](#35-customer-cart)
+  - [Customer Order](#36-customer-order)
+  - [Dispatcher](#37-dispatcher)
+- [Status Code Convention](#4-status-code-convention)
+- [Testing](#5-testing)
 
 ## 1. Overview
 
@@ -44,24 +44,21 @@ The target audiences for this story is:
 * Developers and other technicians who need to interact intimately with the API.
 * Decision-makers and solution architects who need to understand how the API functions and what it can do.
 
-## 3. API Architecture
+## 2. API Architecture
 
 
-
-### Potential Flows
-
-The example API contains services (resources) that might be used in an online shopping, ordering, payment, and shipment platform. 
+The sample API contains services (resources) that might be used in an online shopping, ordering, payment, and shipment platform. 
 
 There is also a Dispatcher service that is represented near the end of this story.
 
-### 3.1 Authorization
+### 2.1 Authorization
 All user access to this sample API needs is provided through OAuth authorization. For more details, go to the [End User Authentication with OAuth 2.0](https://oauth.net/articles/authentication/) specification. 
 
 The OAuth flow grants the access token, which contains the customerID.
-* For this challenge, consider 043fa14b-f6b5-4b96-9cd3-b5f0819b6283 as the customerID.
-* Any v4 UUID can be used in examples, where an ID needs to be depicted.
+* For this challenge, use a customerID of 043fa14b-f6b5-4b96-9cd3-b5f0819b6283.
+* Any v4 UUID can be used in samples where an ID needs to be depicted.
 
-### 3.2 API Services (Resources)
+### 2.2 API Services (Resources)
 
 There are seven services (resources) in total. Six of these services have Open API v3.x Specifications (OAS) as described earlier.
 
@@ -74,7 +71,9 @@ These six services and related OAS files are listed below:
 * Payments (payments.yaml)
 * Shipments (shipments.yaml)
 
-####  Path Parameter Naming Convention
+### 2.3 Path Parameter Naming
+
+The path parameter naming convention is described below:
 
 * ID ({id}) following a noun in the path always corresponds to the noun.
 For example,  /customers/{id}
@@ -85,9 +84,9 @@ For example,  /carts/{customerId}/items
   * carts is the noun.
   * {customerId} is the customer ID.
 
-## 4. API Reference
+## 3. API Reference
 
-### 4.1 Catalog
+### 3.1 Catalog
 Catalog is not user specific. All users (authenticated or unauthenticated) can view the available catalog of items.
 
 | Method | File | Operation |  Path | 
@@ -99,7 +98,7 @@ Catalog is not user specific. All users (authenticated or unauthenticated) can v
 | Update catalog item  |  catalogs.yaml  | PATCH | /catalogs/{id} |
 | Delete catalog item: | catalogs.yaml | DELETE |  /catalogs/{id}
 
-### 4.2 Customer
+### 3.2 Customer
 
 | Method | File | Operation |  Path | 
 |-----------------------------------  | -------------    | ------  | ----------------------------------  |
@@ -109,7 +108,7 @@ Catalog is not user specific. All users (authenticated or unauthenticated) can v
 | Update customer | users.yaml | PATCH | /customers/{id} |
 | Delete customer | users.yaml | DELETE | /customers/{id} |
 
-### 4.3 Customer Payment Cards
+### 3.3 Customer Payment Cards
 
 | Method | File | Operation |  Path | 
 |-----------------------------------  | -------------    | ------  | ----------------------------------  |
@@ -118,7 +117,7 @@ Catalog is not user specific. All users (authenticated or unauthenticated) can v
 | Update customer payment card | users.yaml | PATCH | /cards/{id} |
 | Delete customer payment card | users.yaml | DELETE | Path:/cards/{id} |
 
-### 4.4 Customer Addresses
+### 3.4 Customer Addresses
 
 | Method | File | Operation |  Path | 
 |-----------------------------------  | -------------    | ------  | ----------------------------------  |
@@ -127,13 +126,13 @@ Catalog is not user specific. All users (authenticated or unauthenticated) can v
 | Update customer address | users.yaml | PATCH | /addresses/{id} |
 | Delete customer address | users.yaml | DELETE | /addresses/{id} |
 
-### 4.5 Customer Cart
+### 3.5 Customer Cart
 | Method | File | Operation |  Path | 
 |-----------------------------------  | -------------    | ------  | ----------------------------------  |
 | List customer cart items  |  carts.yaml     |  GET |  /carts/{customerId}/items |
 | Update customer cart items  |  carts.yaml | PUT | /carts/{customerId}/items
 
-### 4.6 Customer Order
+### 3.6 Customer Order
 | Method | File | Operation |  Path | 
 |---------------------------------------------- | -------------  | ------  | -----------------  |
 | List customer orders | orders.yaml | GET | /orders/{customerId} |
@@ -150,7 +149,7 @@ Catalog is not user specific. All users (authenticated or unauthenticated) can v
 |||| Shipment Service extracts the customerID and orderID from the request, generates shipmentID and puts a payload with the 3 IDs onto the Dispatcher Queue.
 |||| On successful completion, sends back with the shipmentID and status to the Order Service, else breaks the transaction.
 
-### 4.7 Dispatcher
+### 3.7 Dispatcher
 The Dispatcher service picks up the payload placed by the Shipment Service on the dispatcher queue. Dispatcher then extracts the customerID and orderID from the queue payload and calls Order Service to get order item details.
 
 | Method | File | Operation |  Path | 
@@ -163,7 +162,7 @@ The Dispatcher service picks up the payload placed by the Shipment Service on th
 |||| Ships the package, extracts the shipmentID from the queue payload and calls Shipment Service to update the shipment status
 | Update customer shipment status | shipments.yaml | PATCH | /shipments/{id} |
 
-## 5. Status Code Convention
+## 4. Status Code Convention
 The services send a variety of status codes which are listed in each of the related OAS files, although they can be categorized more generally as follows:
 * 2XX: Success response
 * 4XX: Client errors
@@ -171,5 +170,5 @@ For example, request validation errors
 * 5XX: Server errors
 For example, database connectivity or internal service call errors
 
-## 6. Testing
+## 5. Testing
 TBD.  
