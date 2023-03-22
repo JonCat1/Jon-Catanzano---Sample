@@ -31,9 +31,9 @@ This story describes how you can use API services to meet your specific use case
 
 ### Purpose
  
-This story provides guidance that decision makers, solution architects, developers, and technicians can follow to model the services that are available in this sample API. For this reason, this story is written to be less technical.
+This story provides guidance that decision makers, solution architects, developers, and technicians can follow to model the API services that are available in sample architecture below. For this reason, this story is written to be less technical.
 
-It only serves as a high-level guide and this story should be consulted in tandem with the [Open API v3.x Specifications](https://swagger.io/specification/) for more details. 
+As a high-level guide, this story should be consulted in tandem with the [Open API v3.x Specifications](https://swagger.io/specification/) for more details. 
 
 (Note that API contracts aren't covered in this story).
 
@@ -51,7 +51,7 @@ The target audiences for this story is:
 
 The sample API contains services (resources) that might be used in an online shopping, ordering, payment, and shipment platform. 
 
-There is also a Dispatcher service that is represented near the end of this story.
+There is also a Dispatcher service that is represented near the end of this story. The Dispatcher service does not require PAuth Authentication. 
 
 ### 2.1 Authorization
 All user access to this sample API is provided through OAuth authorization. For more details, go to the [End User Authentication with OAuth 2.0](https://oauth.net/articles/authentication/) specification. 
