@@ -68,7 +68,7 @@ These six services and related OAS files are listed below:
 * Payments (payments.yaml)
 * Shipments (shipments.yaml)
 
-#####  Path Parameter Naming Convention
+####  Path Parameter Naming Convention
 
 * ID ({id}) following a noun in the path always corresponds to the noun.
 For example,  /customers/{id}
@@ -81,7 +81,7 @@ For example,  /carts/{customerId}/items
 
 ## 4. API Reference
 
-### Catalog
+### 4.1 Catalog
 Catalog is not user specific. All users (authenticated or unauthenticated) can view the available catalog of items.
 
 | Method | File | Operation |  Path | 
@@ -93,7 +93,7 @@ Catalog is not user specific. All users (authenticated or unauthenticated) can v
 | Update catalog item  |  catalogs.yaml  | PATCH | /catalogs/{id} |
 | Delete catalog item: | catalogs.yaml | DELETE |  /catalogs/{id}
 
-### Customer
+### 4.2 Customer
 
 | Method | File | Operation |  Path | 
 |-----------------------------------  | -------------    | ------  | ----------------------------------  |
@@ -103,7 +103,7 @@ Catalog is not user specific. All users (authenticated or unauthenticated) can v
 | Update customer | users.yaml | PATCH | /customers/{id} |
 | Delete customer | users.yaml | DELETE | /customers/{id} |
 
-### Customer Payment Cards
+### 4.3 Customer Payment Cards
 
 | Method | File | Operation |  Path | 
 |-----------------------------------  | -------------    | ------  | ----------------------------------  |
@@ -112,7 +112,7 @@ Catalog is not user specific. All users (authenticated or unauthenticated) can v
 | Update customer payment card | users.yaml | PATCH | /cards/{id} |
 | Delete customer payment card | users.yaml | DELETE | Path:/cards/{id} |
 
-### Customer Addresses
+### 4.4 Customer Addresses
 
 | Method | File | Operation |  Path | 
 |-----------------------------------  | -------------    | ------  | ----------------------------------  |
@@ -121,13 +121,13 @@ Catalog is not user specific. All users (authenticated or unauthenticated) can v
 | Update customer address | users.yaml | PATCH | /addresses/{id} |
 | Delete customer address | users.yaml | DELETE | /addresses/{id} |
 
-### Customer Cart
+### 4,5 Customer Cart
 | Method | File | Operation |  Path | 
 |-----------------------------------  | -------------    | ------  | ----------------------------------  |
 | List customer cart items  |  carts.yaml     |  GET |  /carts/{customerId}/items |
 | Update customer cart items  |  carts.yaml | PUT | /carts/{customerId}/items
 
-### Customer Order
+### 4.6 Customer Order
 | Method | File | Operation |  Path | 
 |---------------------------------------------- | -------------  | ------  | -----------------  |
 | List customer orders | orders.yaml | GET | /orders/{customerId} |
@@ -144,7 +144,7 @@ Catalog is not user specific. All users (authenticated or unauthenticated) can v
 |||| Shipment Service extracts the customerID and orderID from the request, generates shipmentID and puts a payload with the 3 IDs onto the Dispatcher Queue.
 |||| On successful completion, sends back with the shipmentID and status to the Order Service, else breaks the transaction.
 
-### Dispatcher
+### 4.7 Dispatcher
 The Dispatcher service picks up the payload placed by the Shipment Service on the dispatcher queue. Dispatcher then extracts the customerID and orderID from the queue payload and calls Order Service to get order item details.
 
 | Method | File | Operation |  Path | 
@@ -157,7 +157,7 @@ The Dispatcher service picks up the payload placed by the Shipment Service on th
 |||| Ships the package, extracts the shipmentID from the queue payload and calls Shipment Service to update the shipment status
 | Update customer shipment status | shipments.yaml | PATCH | /shipments/{id} |
 
-#### Status Code Convention
+## 5. Status Code Convention
 The services send a variety of status codes which are listed in each of the related OAS files, although they can be categorized more generally as follows:
 * 2XX: Success response
 * 4XX: Client errors
@@ -165,5 +165,5 @@ For example, request validation errors
 * 5XX: Server errors
 For example, database connectivity or internal service call errors
 
-## 5. Testing
+## 6. Testing
 TBD.
