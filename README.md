@@ -13,7 +13,7 @@ This repository contains the documentation for [Medium](https://medium.com)’s 
   - [Self-issued access tokens](#22-self-issued-access-tokens)
 - [API Architecture](#3-api-architecture)
   - [Authorization](#31-authorization)
-  - [API Services](#32-api-reference)
+  - [API Services](#32-api-services)
 - [API reference](#4-api-reference)
 - [Testing](#5-testing)
 
