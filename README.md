@@ -46,6 +46,8 @@ The target audiences for this story is:
 
 ## 2. API Architecture
 
+The architecture for the sample API applied in this story is shown below. 
+
 ![image](https://user-images.githubusercontent.com/16295975/227042763-0a260225-ba70-4ab8-baab-3885fd987116.png)
 
 
