@@ -1,9 +1,7 @@
-# Jon-Catanzano-Comcast Writing Sample
+# Connected Applications Made Simple with APIs
 
 > **Warning**
 > **This is Jon Catanzano's writing sample for the Comcast Writing Challenge.** This document does not refer to an in-use API.
-
-# Connected Applications Made Simple with APIs
 
 This repository contains the documentation for [Medium](https://medium.com)’s API.
 
