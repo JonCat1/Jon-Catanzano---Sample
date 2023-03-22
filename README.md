@@ -33,7 +33,7 @@ This story describes how you can use API services to meet your specific use case
  
 This story provides guidance that decision makers, solution architects, developers, and technicians can follow to model the API services that are available in sample architecture below. For this reason, this story is written to be less technical.
 
-As a high-level guide, this story should be consulted in tandem with the [Open API v3.x Specifications](https://swagger.io/specification/) for more details. 
+As a high-level guide, this story should be read in tandem with the [Open API v3.x Specifications](https://swagger.io/specification/) for more details. 
 
 (Note that API contracts aren't covered in this story).
 
@@ -49,12 +49,11 @@ The target audiences for this story is:
 ![image](https://user-images.githubusercontent.com/16295975/227042763-0a260225-ba70-4ab8-baab-3885fd987116.png)
 
 
-The sample API contains services (resources) that might be used in an online shopping, ordering, payment, and shipment platform. 
-
-There is also a Dispatcher service that is represented near the end of this story. The Dispatcher service does not require PAuth Authentication. 
+The sample API architecture illustrates the services (resources) that might be used in an online shopping, ordering, payment, and shipment platform. 
 
 ### 2.1 Authorization
-All user access to this sample API is provided through OAuth authorization. For more details, go to the [End User Authentication with OAuth 2.0](https://oauth.net/articles/authentication/) specification. 
+
+All user access to this sample API is provided through OAuth authorization. This story should be read in tandem with the [End User Authentication with OAuth 2.0](https://oauth.net/articles/authentication/) for more details. 
 
 The OAuth flow grants the access token, which contains the customerID.
 
@@ -63,9 +62,9 @@ The OAuth flow grants the access token, which contains the customerID.
 
 ### 2.2 API Services
 
-There are seven services (resources) in total. Six of these services have Open API v3.x Specifications (OAS) as described earlier.
+There are seven services (resources) in total. All are represented in the API Reference.
 
-These six services and related OAS files are listed below:
+Six of these API services use Open API v3.x Specifications (OAS) as listed below:
 
 * User (users.yaml)
 * Orders (orders.yaml)
@@ -73,6 +72,12 @@ These six services and related OAS files are listed below:
 * Carts (carts.yaml)
 * Payments (payments.yaml)
 * Shipments (shipments.yaml)
+
+The last API service is listed as:
+
+* Dispatcher (dispatcher.yaml)
+
+The Dispatcher service does not require Open API v3.x Specifications (OAS). 
 
 ### 2.3 Path Parameter Naming
 
