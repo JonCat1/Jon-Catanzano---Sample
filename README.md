@@ -46,6 +46,8 @@ The target audiences for this story is:
 
 ## 2. API Architecture
 
+![image](https://user-images.githubusercontent.com/16295975/227042763-0a260225-ba70-4ab8-baab-3885fd987116.png)
+
 
 The sample API contains services (resources) that might be used in an online shopping, ordering, payment, and shipment platform. 
 
