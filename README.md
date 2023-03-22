@@ -14,7 +14,8 @@ This repository contains the documentation for [Medium](https://medium.com)’s 
 - [API Architecture](#3-api-architecture)
   - [Authorization](#31-authorization)
   - [API Services](#32-api-reference)
-- [Testing](#4-testing)
+- [API reference](#4-api-reference)
+- [Testing](#5-testing)
 
 ## 1. Overview
 
@@ -80,9 +81,9 @@ For example,  /carts/{customerId}/items
   * carts is the noun.
   * {customerId} is the customer ID.
 
+## 4. API Reference
 
-
-#### Catalog
+### Catalog
 Catalog is not user specific. All users (authenticated or unauthenticated) can view the available catalog of items.
 
 | Method | File | Operation |  Path | 
@@ -94,7 +95,7 @@ Catalog is not user specific. All users (authenticated or unauthenticated) can v
 | Update catalog item  |  catalogs.yaml  | PATCH | /catalogs/{id} |
 | Delete catalog item: | catalogs.yaml | DELETE |  /catalogs/{id}
 
-#### Customer
+### Customer
 
 | Method | File | Operation |  Path | 
 |-----------------------------------  | -------------    | ------  | ----------------------------------  |
@@ -104,7 +105,7 @@ Catalog is not user specific. All users (authenticated or unauthenticated) can v
 | Update customer | users.yaml | PATCH | /customers/{id} |
 | Delete customer | users.yaml | DELETE | /customers/{id} |
 
-#### Customer Payment Cards
+### Customer Payment Cards
 
 | Method | File | Operation |  Path | 
 |-----------------------------------  | -------------    | ------  | ----------------------------------  |
@@ -113,7 +114,7 @@ Catalog is not user specific. All users (authenticated or unauthenticated) can v
 | Update customer payment card | users.yaml | PATCH | /cards/{id} |
 | Delete customer payment card | users.yaml | DELETE | Path:/cards/{id} |
 
-#### Customer Addresses
+### Customer Addresses
 
 | Method | File | Operation |  Path | 
 |-----------------------------------  | -------------    | ------  | ----------------------------------  |
@@ -122,13 +123,13 @@ Catalog is not user specific. All users (authenticated or unauthenticated) can v
 | Update customer address | users.yaml | PATCH | /addresses/{id} |
 | Delete customer address | users.yaml | DELETE | /addresses/{id} |
 
-#### Customer Cart
+### Customer Cart
 | Method | File | Operation |  Path | 
 |-----------------------------------  | -------------    | ------  | ----------------------------------  |
 | List customer cart items  |  carts.yaml     |  GET |  /carts/{customerId}/items |
 | Update customer cart items  |  carts.yaml | PUT | /carts/{customerId}/items
 
-#### Customer Order
+### Customer Order
 | Method | File | Operation |  Path | 
 |---------------------------------------------- | -------------  | ------  | -----------------  |
 | List customer orders | orders.yaml | GET | /orders/{customerId} |
@@ -145,7 +146,7 @@ Catalog is not user specific. All users (authenticated or unauthenticated) can v
 |||| Shipment Service extracts the customerID and orderID from the request, generates shipmentID and puts a payload with the 3 IDs onto the Dispatcher Queue.
 |||| On successful completion, sends back with the shipmentID and status to the Order Service, else breaks the transaction.
 
-#### Dispatcher
+### Dispatcher
 The Dispatcher service picks up the payload placed by the Shipment Service on the dispatcher queue. Dispatcher then extracts the customerID and orderID from the queue payload and calls Order Service to get order item details.
 
 | Method | File | Operation |  Path | 
@@ -158,7 +159,7 @@ The Dispatcher service picks up the payload placed by the Shipment Service on th
 |||| Ships the package, extracts the shipmentID from the queue payload and calls Shipment Service to update the shipment status
 | Update customer shipment status | shipments.yaml | PATCH | /shipments/{id} |
 
-##### Status Code Convention
+#### Status Code Convention
 The services send a variety of status codes which are listed in each of the related OAS files, although they can be categorized more generally as follows:
 * 2XX: Success response
 * 4XX: Client errors
@@ -166,5 +167,5 @@ For example, request validation errors
 * 5XX: Server errors
 For example, database connectivity or internal service call errors
 
-## 4. Testing
+## 5. Testing
 TBD.
