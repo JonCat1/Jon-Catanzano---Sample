@@ -33,7 +33,7 @@ This story describes how you can use API services to meet your specific use case
  
 This story provides guidance that decision makers, solution architects, developers, and technicians can follow to model the services that are available in this sample API. For this reason, this story is written to be less technical.
 
-It only serves as a high-level guide for flows and should be consulted in tandem with the provided [Open API v3.x Specifications](https://swagger.io/specification/). 
+It only serves as a high-level guide and this story should be consulted in tandem with the [Open API v3.x Specifications](https://swagger.io/specification/) for more details. 
 
 (Note that API contracts aren't covered in this story).
 
@@ -41,8 +41,8 @@ It only serves as a high-level guide for flows and should be consulted in tandem
 
 The target audiences for this story is:
 
-* Developers and other technicians who need to interact intimately with the API.
 * Decision-makers and solution architects who need to understand how the API functions and what it can do.
+* Developers and other technicians who need to interact intimately with the API.
 
 ## 2. API Architecture
 
