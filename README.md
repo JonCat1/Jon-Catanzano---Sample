@@ -13,7 +13,8 @@ This repository contains a summary of how you can use these sample API services 
   - [Authorization](#31-authorization)
   - [API Services (Resources)](#32-api-services)
 - [API Reference](#4-api-reference)
-- [Testing](#5-testing)
+[Status Code Convention](#5-status-code-convention)
+[Testing](#6-testing)
 
 ## 1. Overview
 
