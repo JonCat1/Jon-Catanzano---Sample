@@ -20,7 +20,7 @@ This repository contains documentation that summarizes how you can use these sam
   - [Customer Cart](#35-customer-cart)
   - [Customer Order](#36-customer-order)
   - [Dispatcher](#37-dispatcher)
-- [Request Status Code Convention](#4-request-status-code-convention)
+- [Return Code Convention](#4-return-code-convention)
 - [Testing](#5-testing)
 
 ## 1. Overview
@@ -50,7 +50,8 @@ The target audiences for this story is:
 
 
 The sample API architecture illustrates the services (resources) that might be used in an online shopping, ordering, payment, and shipment platform.
-The architecture also shows the request status and error codes in the event the service request is invalid, review [Request Status Code Convention](#4-request-status-code-convention) for more details.  
+
+The architecture also shows the status and error return codes in the event the service request is invalid, review [Return Code Convention](#4-return-code-convention) for more details.  
 
 ### 2.1 Authorization
 
@@ -172,7 +173,7 @@ The Dispatcher service picks up the payload placed by the Shipment Service on th
 |||| Ships the package, extracts the shipmentID from the queue payload and calls Shipment Service to update the shipment status
 | Update customer shipment status | shipments.yaml | PATCH | /shipments/{id} |
 
-## 4. Request Status Code Convention
+## 4. Return Code Convention
 
 The services send a variety of status codes which are listed in each of the related OAS files, although they can be categorized more generally as follows:
 * 2XX: Success response
