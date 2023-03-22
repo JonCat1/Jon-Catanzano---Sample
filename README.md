@@ -55,7 +55,8 @@ There is also a Dispatcher service that is represented near the end of this stor
 All user access to this sample API needs is provided through OAuth authorization. For more details, go to the [End User Authentication with OAuth 2.0](https://oauth.net/articles/authentication/) specification. 
 
 The OAuth flow grants the access token, which contains the customerID.
-* For this challenge, use a customerID of 043fa14b-f6b5-4b96-9cd3-b5f0819b6283.
+
+* In this sample, use a customerID of 043fa14b-f6b5-4b96-9cd3-b5f0819b6283.
 * Any v4 UUID can be used in samples where an ID needs to be depicted.
 
 ### 2.2 API Services
@@ -76,18 +77,19 @@ These six services and related OAS files are listed below:
 The path parameter naming convention is described below:
 
 * ID ({id}) following a noun in the path always corresponds to the noun.
-For example,  /customers/{id}
+  For example,  /customers/{id}
   * customers is the noun.
   * {id} is the customer ID.
 * When the ID ({id}) doesn't correspond to the noun it is explicitly named.
-For example,  /carts/{customerId}/items
+  For example,  /carts/{customerId}/items
   * carts is the noun.
   * {customerId} is the customer ID.
 
 ## 3. API Reference
 
 ### 3.1 Catalog
-Catalog is not user specific. All users (authenticated or unauthenticated) can view the available catalog of items.
+
+Catalog is not user-specific. All users (authenticated or unauthenticated) can view the available catalog of items.
 
 | Method | File | Operation |  Path | 
 |-----------------------------------  | -------------    | ------  | ----------------------------------  |
