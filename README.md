@@ -13,8 +13,15 @@ This repository contains a summary of how you can use these sample API services 
   - [Authorization](#31-authorization)
   - [API Services (Resources)](#32-api-services)
 - [API Reference](#4-api-reference)
-[Status Code Convention](#5-status-code-convention)
-[Testing](#6-testing)
+  - [Catalog](#41-catalog)
+  - [Customer)](#42-customer)
+  - [Customer Payment Cards](#43-customer-payment-cards)
+  - [Customer Addresses](#44-customer-addresses)
+  - [Customer Cart](#45-customer-cart)
+  - [Customer Order](#46-customer-order)
+  - [Dispatcher)](#47-dispatcher)
+- [Status Code Convention](#5-status-code-convention)
+- [Testing](#6-testing)
 
 ## 1. Overview
 
@@ -122,7 +129,7 @@ Catalog is not user specific. All users (authenticated or unauthenticated) can v
 | Update customer address | users.yaml | PATCH | /addresses/{id} |
 | Delete customer address | users.yaml | DELETE | /addresses/{id} |
 
-### 4,5 Customer Cart
+### 4.5 Customer Cart
 | Method | File | Operation |  Path | 
 |-----------------------------------  | -------------    | ------  | ----------------------------------  |
 | List customer cart items  |  carts.yaml     |  GET |  /carts/{customerId}/items |
