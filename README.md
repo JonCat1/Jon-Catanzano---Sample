@@ -10,14 +10,12 @@ This repository contains the documentation for [Medium](https://medium.com)’s 
 #### Contents
 
 - [Overview](#1-overview)
-- [Authentication](#2-authentication)
+- [API Documentation](#2-api-documentation)
   - [Browser-based authentication](#21-browser-based-authentication)
   - [Self-issued access tokens](#22-self-issued-access-tokens)
-- [Resources](#3-resources)
-  - [Users](#31-users)
-  - [Publications](#32-publications)
-  - [Posts](#33-posts)
-  - [Images](#34-images)
+- [API Architecture](#3-api-architecture)
+  - [Authorization](#31-authorization)
+  - [API Services](#32-api-reference)
 - [Testing](#4-testing)
 
 ## 1. Overview
@@ -169,3 +167,6 @@ The services send a variety of status codes which are listed in each of the rela
 For example, request validation errors
 * 5XX: Server errors
 For example, database connectivity or internal service call errors
+
+## Testing
+TBD.
