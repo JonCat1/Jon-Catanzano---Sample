@@ -67,7 +67,7 @@ https://medium.com/m/oauth/authorize?client_id={{clientId}}
     &response_type=code
     &redirect_uri={{redirectUri}}
 ```
-
+`redirect_uri`
 
 * In this sample, the customerID is: 043fa14b-f6b5-4b96-9cd3-b5f0819b6283.
 * Any v4 UUID can be used in samples where an ID needs to be depicted.
