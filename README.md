@@ -69,7 +69,7 @@ https://medium.com/m/oauth/authorize?client_id={{clientId}}
 ```
 `redirect_uri`
 
-* In this sample, the customerID is: 043fa14b-f6b5-4b96-9cd3-b5f0819b6283.
+* For this sample, the customerID is: '043fa14b-f6b5-4b96-9cd3-b5f0819b6283'.
 * Any v4 UUID can be used in samples where an ID needs to be depicted.
 
 ### 2.2 API Services
@@ -96,13 +96,13 @@ The Dispatcher service does not require Open API v3.x Specifications (OAS).
 The path parameter naming convention is described below:
 
 * ID ({id}) following a noun in the path always corresponds to the noun.
-  For example, for /customers/{id}:
-  * customers is the noun.
-  * {id} is the customer ID.
+  For example, for '/customers/{id}':
+  * 'customers' is the noun.
+  * '{id}' is the customer ID.
 * When the ID ({id}) doesn't correspond to the noun it is explicitly named.
-  For example, for /carts/{customerId}/items:
-  * carts is the noun.
-  * {customerId} is the customer ID.
+  For example, for '/carts/{customerId}/items':
+  * 'carts' is the noun.
+  * '{customerId}' is the customer ID.
 
 ## 3. API Reference
 
