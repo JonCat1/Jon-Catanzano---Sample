@@ -177,7 +177,7 @@ The Dispatcher service picks up the payload placed by the Shipment Service on th
 
 ## 4. Return Code Convention
 
-The API services send a variety of status and error codes which are listed in each of the related OAS files, although they can be categorized more generally as follows:
+The API services send a variety of status and error return codes which are listed in each of the related OAS files, although they can be categorized more generally using the following convention:
 
 * 2XX: Success response
 * 4XX: Client errors. For example, request validation errors
