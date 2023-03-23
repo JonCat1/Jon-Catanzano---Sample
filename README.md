@@ -60,16 +60,10 @@ The architecture also shows the status and error return codes in the event the s
 All user access to this sample API is provided through OAuth authorization. This story should be read in tandem with the [End User Authentication with OAuth 2.0](https://oauth.net/articles/authentication/) for more details. 
 
 The OAuth flow grants the access token, which contains the customerID.
-```
-https://medium.com/m/oauth/authorize?client_id={{clientId}}
-    &scope=basicProfile,publishPost
-    &state={{state}}
-    &response_type=code
-    &redirect_uri={{redirectUri}}
-```
+
 `redirect_uri`
 
-* For this sample, the customerID is: '043fa14b-f6b5-4b96-9cd3-b5f0819b6283'.
+* For this sample, the customerID is: `043fa14b-f6b5-4b96-9cd3-b5f0819b6283`.
 * Any v4 UUID can be used in samples where an ID needs to be depicted.
 
 ### 2.2 API Services
