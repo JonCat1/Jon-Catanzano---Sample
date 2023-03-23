@@ -51,7 +51,7 @@ The architecture for the sample API applied in this story is shown below.
 ![image](https://user-images.githubusercontent.com/16295975/227042763-0a260225-ba70-4ab8-baab-3885fd987116.png)
 
 
-The sample API architecture illustrates the services (resources) that might be used in an online shopping, ordering, payment, and shipment platform.
+The sample API architecture illustrates the services (resources) that might be used in an online shopping, ordering, payment, and shipment and delivery platform.
 
 The architecture also shows the status and error return codes in the event the service request is invalid, review [Return Code Convention](#4-return-code-convention) for more details.  
 
@@ -81,7 +81,7 @@ The last API service is listed as:
 
 * Dispatcher (dispatcher.yaml)
 
-The Dispatcher service does not require Open API v3.x Specifications (OAS). 
+The Dispatcher service is internal and does not require Open API v3.x Specifications (OAS). 
 
 ### 2.3 Path Parameter Naming
 
@@ -104,61 +104,61 @@ Catalog is not user-specific. All users (authenticated or unauthenticated) can v
 
 | Method | File | Operation |  Path | 
 |-----------------------------------  | -------------    | ------  | ----------------------------------  |
-| List catalog items  |  catalogs.yaml     |  GET |  /catalogs |
-| Add catalog items  |  catalogs.yaml  | POST |  /catalogs |
-| Update catalog item  |  catalogs.yaml  | POST |  /catalogs |
-| Add catalog items  |  catalogs.yaml  | PATCH | /catalogs/{id} |
-| Update catalog item  |  catalogs.yaml  | PATCH | /catalogs/{id} |
-| Delete catalog item: | catalogs.yaml | DELETE |  /catalogs/{id}
+| List catalog items  |  catalogs.yaml     |  GET |  `/catalogs` |
+| Add catalog items  |  catalogs.yaml  | POST |  `/catalogs` |
+| Update catalog item  |  catalogs.yaml  | POST |  `/catalogs` |
+| Add catalog items  |  catalogs.yaml  | PATCH | `/catalogs/{id}` |
+| Update catalog item  |  catalogs.yaml  | PATCH | `/catalogs/{id}` |
+| Delete catalog item: | catalogs.yaml | DELETE |  `/catalogs/{id}`
 
 ### 3.2 Customer
 
 | Method | File | Operation |  Path | 
 |-----------------------------------  | -------------    | ------  | ----------------------------------  |
-| Get customer | users.yaml | GET |   /customers/{id} |
-| Get customer | users.yaml | GET | /customers/{id} |
-| Add customer | users.yaml | POST | /customers
-| Update customer | users.yaml | PATCH | /customers/{id} |
-| Delete customer | users.yaml | DELETE | /customers/{id} |
+| Get customer | users.yaml | GET |  `/customers/{id}` |
+| Get customer | users.yaml | GET | `/customers/{id}` |
+| Add customer | users.yaml | POST | `/customers`
+| Update customer | users.yaml | PATCH | `/customers/{id}` |
+| Delete customer | users.yaml | DELETE | `/customers/{id}` |
 
 ### 3.3 Customer Payment Cards
 
 | Method | File | Operation |  Path | 
 |-----------------------------------  | -------------    | ------  | ----------------------------------  |
-| List customer payment cards | users.yaml | GET | /customers/{id}/cards |
-| Add customer payment cards | users.yaml | POST | /customers/{id}/cards |
-| Update customer payment card | users.yaml | PATCH | /cards/{id} |
-| Delete customer payment card | users.yaml | DELETE | Path:/cards/{id} |
+| List customer payment cards | users.yaml | GET | `/customers/{id}/cards` |
+| Add customer payment cards | users.yaml | POST | `/customers/{id}/cards` |
+| Update customer payment card | users.yaml | PATCH | `/cards/{id}` |
+| Delete customer payment card | users.yaml | DELETE | `Path:/cards/{id}` |
 
 ### 3.4 Customer Addresses
 
 | Method | File | Operation |  Path | 
 |-----------------------------------  | -------------    | ------  | ----------------------------------  |
-| List customer addresses | users.yaml | GET | /customers/{id}/addresses |
-| Add customer addresses | users.yaml | POST | /customers/{id}/addresses |
-| Update customer address | users.yaml | PATCH | /addresses/{id} |
-| Delete customer address | users.yaml | DELETE | /addresses/{id} |
+| List customer addresses | users.yaml | GET | `/customers/{id}/addresses` |
+| Add customer addresses | users.yaml | POST | `/customers/{id}/addresses` |
+| Update customer address | users.yaml | PATCH | `/addresses/{id}` |
+| Delete customer address | users.yaml | DELETE | `/addresses/{id}` |
 
 ### 3.5 Customer Cart
 | Method | File | Operation |  Path | 
 |-----------------------------------  | -------------    | ------  | ----------------------------------  |
-| List customer cart items  |  carts.yaml     |  GET |  /carts/{customerId}/items |
-| Update customer cart items  |  carts.yaml | PUT | /carts/{customerId}/items
+| List customer cart items  |  carts.yaml     |  GET |  `/carts/{customerId}/items` |
+| Update customer cart items  |  carts.yaml | PUT | `/carts/{customerId}/items`
 
 ### 3.6 Customer Order
 | Method | File | Operation |  Path | 
 |---------------------------------------------- | -------------  | ------  | -----------------  |
-| List customer orders | orders.yaml | GET | /orders/{customerId} |
+| List customer orders | orders.yaml | GET | `/orders/{customerId}` |
 |||| Order Service gets the shipment status from the Shipment Service, using the shipmentID that is sent on a successful shipment creation by the Shipment Service.  See below to learn more about when the shipmentID is generated.
-| List customer shipment status | shipments.yaml | GET | /shipments/{id} |
-| Add customer order | orders.yaml | POST | /orders/{customerId} |
+| List customer shipment status | shipments.yaml | GET | `/shipments/{id` |
+| Add customer order | orders.yaml | POST | `/orders/{customerId}` |
 |||| Extracts cardID from the request and calls Payments Service to authorize the payment.
-| Verify customer payment | payments.yaml | POST | /payments |
+| Verify customer payment | payments.yaml | POST | `/payments` |
 |||| Payments Service extracts cardID from the request and calls User Service to get the payment card details.
-| List customer payment cards | users.yaml | GET | /cards/{id} |
+| List customer payment cards | users.yaml | GET | `/cards/{id}` |
 |||| Tries to process the payment, continues if successful, else breaks the transaction.
 |||| Extracts customerID from the request path, generates orderID and calls Shipment Service for order fulfillment.
-| Add customer shipment | shipments.yaml | POST | /shipments
+| Add customer shipment | shipments.yaml | POST | `/shipments`
 |||| Shipment Service extracts the customerID and orderID from the request, generates shipmentID and puts a payload with the 3 IDs onto the Dispatcher Queue.
 |||| On successful completion, sends back with the shipmentID and status to the Order Service, else breaks the transaction.
 
@@ -167,13 +167,13 @@ The Dispatcher service picks up the payload placed by the Shipment Service on th
 
 | Method | File | Operation |  Path | 
 |-----------------------------------  | -------------    | ------  | ----------------------------------  |
-| Get customer order | orders.yaml | GET | /orders/{customerId}/{orderId} |
+| Get customer order | orders.yaml | GET | `/orders/{customerId}/{orderId}` |
 |||| Extracts the itemID of each item in the order from the response (n items = n itemIDs = n calls to the Catalog Service) and calls the Catalog Service.
-| Get Catalog Item | catalogs.yaml | GET |  /catalogs/{id} |
+| Get Catalog Item | catalogs.yaml | GET |  `/catalogs/{id}` |
 |||| Extracts addressId from the response and calls User Service to get the address.
-| Get customer address | users.yaml | GET | /addresses/{id} |
+| Get customer address | users.yaml | GET | `/addresses/{id}` |
 |||| Ships the package, extracts the shipmentID from the queue payload and calls Shipment Service to update the shipment status
-| Update customer shipment status | shipments.yaml | PATCH | /shipments/{id} |
+| Update customer shipment status | shipments.yaml | PATCH | `/shipments/{id}` |
 
 ## 4. Return Code Convention
 
